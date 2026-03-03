@@ -1,14 +1,17 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 import { locales, localeNames, type Locale } from "@/i18n/config";
 
 export function LanguageSwitcher() {
-  const locale = useLocale() as Locale;
   const router = useRouter();
-  const pathname = usePathname();
+  const fullPathname = usePathname(); // e.g. /es/join-us or /es
+  const nextIntlLocale = useLocale() as Locale;
+  // Derive current locale from URL so it stays correct when using next/navigation
+  const segment = fullPathname.split("/").filter(Boolean)[0];
+  const locale = (segment && locales.includes(segment as Locale) ? segment : nextIntlLocale) as Locale;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,7 +26,20 @@ export function LanguageSwitcher() {
   }, []);
 
   function switchLocale(newLocale: Locale) {
-    router.replace(pathname, { locale: newLocale });
+    // Build path without locale: /es/join-us -> /join-us, /es or /es/fr -> /
+    const segments = fullPathname.split("/").filter(Boolean);
+    const pathWithoutLocale =
+      segments.length > 0 && locales.includes(segments[0] as Locale)
+        ? "/" + segments.slice(1).join("/")
+        : fullPathname;
+    // If the remainder is just another locale (e.g. /es/fr), treat as home
+    const isHome =
+      !pathWithoutLocale ||
+      pathWithoutLocale === "/" ||
+      (pathWithoutLocale.length <= 4 && locales.includes(pathWithoutLocale.slice(1) as Locale));
+    const path = isHome ? "" : pathWithoutLocale;
+    const href = `/${newLocale}${path}`;
+    router.replace(href);
     setOpen(false);
   }
 
