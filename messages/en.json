@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "about": "About",
+    "catering": "Catering",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "press": "Press",
+    "joinUs": "Join us",
+    "contact": "Contact",
+    "toggleMenu": "Toggle menu",
+    "home": "TacoLoco home",
+    "logoAlt": "TacoLoco Street Food"
+  },
+  "hero": {
+    "tagline": "Street Food · Kensington Market",
+    "title": "Toronto's favourite Mexican street food. one bite and you'll be back",
+    "address": "160 Baldwin Street · Open daily 12 PM – 8:30 PM",
+    "extraMobile": "Handmade tacos, birria, and tortas with bold, authentic flavour. Walk in or order on Uber Eats.",
+    "seeMenu": "See menu",
+    "messageUs": "Message us",
+    "orderUber": "Order on Uber Eats",
+    "logoAlt": "TacoLoco Street Food"
+  },
+  "home": {
+    "exploreMore": {
+      "title": "Discover TacoLoco",
+      "intro": "Explore our full menu, book catering for your next event, read about us in the press, or join the team."
+    }
+  },
+  "menu": {
+    "title": "Our menu",
+    "subtitle": "Every item made fresh to order. real Mexican street food, no shortcuts. Prices may vary; check in-store or Uber Eats for the latest.",
+    "tacos": "Tacos",
+    "tortas": "Tortas & more",
+    "fullMenu": "See on Uber Eats",
+    "items": {
+      "alPastor": "Al Pastor",
+      "alPastorDesc": "Spit-roasted pork marinated in achiote, pineapple, and guajillo chili",
+      "chorizo": "Chorizo",
+      "chorizoDesc": "House-seasoned Mexican sausage with smoky paprika and cumin",
+      "birria": "Birria",
+      "birriaDesc": "Slow-braised beef in a rich chili consommé. Toronto's #1 birria taco",
+      "otherFillings": "Daily specials",
+      "otherFillingsDesc": "Rotating fillings. ask the team what's on today",
+      "tortaLoca": "Torta Loca Chorizo",
+      "tortaLocaDesc": "Loaded Mexican sandwich with chorizo, beans, avocado, and salsa",
+      "combo": "Combo meals",
+      "comboDesc": "3 tacos + rice, beans & a drink. the best value in Kensington"
+    },
+    "priceFrom": "From $7"
+  },
+  "testimonials": {
+    "title": "Don't just take our word for it",
+    "subtitle": "Loved by thousands of customers across Toronto",
+    "quotes": [
+      {
+        "quote": "The best tacos I've had in Toronto, hands down. The birria is next-level. crispy, juicy, and the consommé is liquid gold. We're regulars now.",
+        "author": "Sarah M.",
+        "source": "Yelp"
+      },
+      {
+        "quote": "Authentic street food vibes with generous portions. The Torta Loca is a monster. in the best way. Already planning my next visit.",
+        "author": "James L.",
+        "source": "Uber Eats"
+      },
+      {
+        "quote": "Consistently the best lunch spot in Kensington Market. Fast service, fresh ingredients, and flavours that actually taste like Mexico. 10/10.",
+        "author": "Maria K.",
+        "source": "Google"
+      },
+      {
+        "quote": "Real Mexican flavours. no watered-down fusion stuff. The chorizo tacos are straight fire. Staff are warm and friendly too. A hidden gem.",
+        "author": "Alex T.",
+        "source": "Yelp"
+      },
+      {
+        "quote": "Ordered delivery through Uber Eats expecting it to lose something in transit. nope, everything arrived perfectly hot. The combo is unbeatable value.",
+        "author": "Chris R.",
+        "source": "Uber Eats"
+      }
+    ]
+  },
+  "googleReview": {
+    "title": "Google reviews",
+    "subtitle": "See what our customers are saying on Google",
+    "viewOnGoogle": "Read reviews on Google",
+    "writeReview": "Leave a review",
+    "viewAndWrite": "Read and leave reviews on Google"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know before visiting TacoLoco or placing an order.",
+    "q0": "Where exactly is TacoLoco?",
+    "a0": "We're at 160 Baldwin Street in Kensington Market, Toronto. a 2-minute walk from Spadina Ave, right in the heart of one of the city's most iconic food neighbourhoods. Look for the red signage.",
+    "q1": "What are your opening hours?",
+    "a1": "We're open every day from 12:00 PM to 8:30 PM, including weekends and holidays. No reservations needed. just walk in, grab a spot, and order at the counter.",
+    "q2": "Do you deliver? Can I order online?",
+    "a2": "Yes! We're on Uber Eats for delivery and pickup across the Toronto area. Order through the app to get our full menu delivered to your door, or choose pickup to skip the line.",
+    "q3": "Is there seating available?",
+    "a3": "We have limited counter seating inside. it's a cozy, authentic street food experience. Most guests grab their tacos and enjoy them in Kensington Market or take them to go. In summer, we have outdoor seating too.",
+    "q4": "Do you offer vegetarian or vegan options?",
+    "a4": "Our specialty is traditional meat-based Mexican street food. We occasionally have vegetarian-friendly options. ask our team in person or check our current Uber Eats menu for any plant-based items available that day.",
+    "q5": "What payment methods do you accept?",
+    "a5": "We accept cash, debit, and all major credit cards. For Uber Eats orders, payment is handled directly in the app. Apple Pay, Google Pay, and cards all work.",
+    "q6": "Can I order ahead for pickup?",
+    "a6": "Absolutely. Place your order through Uber Eats and select the pickup option. your food will be ready when you arrive. You can also call ahead or simply walk in.",
+    "q7": "Are you on Too Good To Go?",
+    "a7": "Yes! We partner with Too Good To Go to fight food waste. Check the app for surprise bags at a fraction of the price. it's a great way to try TacoLoco if you haven't yet.",
+    "q8": "Do you offer catering for events and parties?",
+    "a8": "We do! TacoLoco catering is perfect for office lunches, birthday parties, weddings, and corporate events. We serve the same authentic street food. fresh, hot, and crowd-pleasing. Visit our catering page or message us on Instagram @tacoloco.to for a custom quote.",
+    "q9": "Why Kensington Market?",
+    "a9": "Kensington Market is Toronto's beating heart of independent food culture. eclectic, multicultural, and always buzzing. It's the perfect home for TacoLoco. We're proud to be part of a neighbourhood that celebrates real food, real people, and real flavour."
+  },
+  "pages": {
+    "about": {
+      "title": "About TacoLoco",
+      "intro": "TacoLoco started with a simple idea: bring the bold, unapologetic flavours of Mexican street food to Toronto. no shortcuts, no compromises.",
+      "p1": "Founded in the heart of Kensington Market, we set up shop at 160 Baldwin Street because this neighbourhood is everything we believe in: independent, diverse, and obsessed with great food. Every day, we fire up the grill and make each taco, torta, and birria from scratch using traditional recipes and the freshest ingredients we can source.",
+      "p2": "Our al pastor is spit-roasted low and slow. Our birria is braised for hours until fork-tender. Our salsas are made in-house daily. There are no frozen patties, no microwaves, no artificial anything. What you taste is real Mexican street food. the kind you'd find on the streets of Mexico City, Guadalajara, or Oaxaca.",
+      "p3": "But TacoLoco is more than food. We're a community spot. A place where Kensington Market regulars bump into tourists, where families share a table with students, and where the only thing that matters is whether you're hungry. We've been rated 4.7 on Yelp, 4.6 on Too Good To Go, and recommended by everyone who's tried us.",
+      "p4": "Whether you're walking through the market, ordering delivery on Uber Eats, or booking us for your next event. we promise the same thing every time: authentic flavour, generous portions, and food made with love.",
+      "cta": "Get in touch. we'd love to hear from you →"
+    },
+    "catering": {
+      "title": "TacoLoco Catering",
+      "intro": "Make your next event unforgettable with Toronto's most-loved Mexican street food. TacoLoco catering brings the full Kensington Market experience to your venue, fresh, flavourful, and stress-free.",
+      "section1Title": "Feed any crowd",
+      "p1": "Whether it's a corporate lunch for 20, a birthday bash for 50, or a wedding reception for 200, we've got you covered. Our catering menu features the same handmade tacos, birria, tortas, and sides we serve at 160 Baldwin, prepared on-site or delivered hot and ready to eat. We customize every order to your group size, dietary needs, and budget.",
+      "section2Title": "Why TacoLoco?",
+      "p2": "Because nobody wants another boring sandwich platter. Our food is interactive, Instagrammable, and guaranteed to be the highlight of your event. We handle setup and cleanup so you can focus on your guests.",
+      "formTitle": "Request a quote",
+      "p3": "Fill out the form below and we'll respond within 24 hours with a custom quote tailored to your event.",
+      "contactUs": "Request a catering quote →",
+      "form": {
+        "name": "Your name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "date": "Event date",
+        "guests": "Number of guests",
+        "guestsPlaceholder": "e.g. 30-50 people",
+        "message": "Tell us about your event",
+        "messagePlaceholder": "Type of event, preferred menu items, any dietary requirements...",
+        "submit": "Send request",
+        "sending": "Sending...",
+        "success": "Thank you! We've received your request and will get back to you within 24 hours.",
+        "error": "Something went wrong. Please try again or email us directly."
+      }
+    },
+    "menuPage": {
+      "title": "Full menu",
+      "intro": "Everything we serve at TacoLoco. handmade daily with fresh ingredients and authentic Mexican recipes. Prices updated regularly; check Uber Eats for the latest availability and delivery options."
+    },
+    "press": {
+      "title": "Press & media",
+      "intro": "TacoLoco has been recognized as one of Kensington Market's standout street food destinations. Featured in local food guides, recommended by Toronto food bloggers, and loved by thousands of customers across the city.",
+      "p1": "Our story is about bringing real Mexican street food to Toronto's most iconic food neighbourhood. no gimmicks, just bold flavour and honest ingredients. From our spit-roasted al pastor to our slow-braised birria, every dish tells a story of tradition and craft.",
+      "p2": "For press inquiries, interviews, photography requests, or collaboration opportunities, please reach out through our contact page or DM us on Instagram @tacoloco.to. We're happy to provide high-resolution images, background information, and arrange tastings for media.",
+      "contactUs": "Contact our team →"
+    },
+    "joinUs": {
+      "title": "Work at TacoLoco",
+      "intro": "We're building something special in Kensington Market, and we're looking for people who share our passion for great food, genuine hospitality, and good energy.",
+      "section1Title": "More than a job",
+      "p1": "At TacoLoco, you won't just be filling tacos. You'll be part of a tight-knit team that takes pride in every plate, connects with customers from all over the world, and works in one of Toronto's most exciting neighbourhoods. We value reliability, a positive attitude, and a willingness to learn. Experience in food service is a plus, but enthusiasm matters more.",
+      "section2Title": "What we offer",
+      "p2": "Flexible schedules, staff meals, a fun work environment, and the chance to grow with a brand that's on the rise. We believe in taking care of our people because happy teams make the best food.",
+      "ctaTitle": "Ready to join?",
+      "ctaText": "Drop by 160 Baldwin Street with your resume, DM us on Instagram, or send us a message.",
+      "getInTouch": "Apply now"
+    },
+    "contact": {
+      "title": "Contact TacoLoco",
+      "intro": "Have a question, want to place a large order, or interested in catering? We'd love to hear from you.",
+      "addressLabel": "Find us",
+      "address": "160 Baldwin Street, Kensington Market, Toronto, ON",
+      "hoursLabel": "Hours",
+      "hours": "Open daily 12:00 PM – 8:30 PM",
+      "connectLabel": "Get in touch",
+      "message": "Text us",
+      "orderOnline": "Uber Eats",
+      "formTitle": "Send us a message",
+      "formSubtitle": "We'll get back to you within 24 hours.",
+      "form": {
+        "name": "Your name",
+        "email": "Email address",
+        "message": "Your message",
+        "messagePlaceholder": "Questions, feedback, large orders...",
+        "submit": "Send message",
+        "sending": "Sending...",
+        "success": "Thank you! We'll get back to you soon.",
+        "error": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Authentic Mexican street food in the heart of Kensington Market, Toronto. Handmade tacos, birria, and tortas. open daily.",
+    "visit": "Visit us",
+    "menu": "Menu",
+    "about": "About",
+    "catering": "Catering",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "press": "Press",
+    "joinUs": "Join us",
+    "contact": "Contact",
+    "address1": "160 Baldwin Street",
+    "address2": "Toronto, ON",
+    "address3": "Kensington Market",
+    "hours": "Open daily 12:00 PM – 8:30 PM",
+    "connect": "Connect",
+    "instagram": "Instagram",
+    "ubereats": "Uber Eats",
+    "orderCatering": "Order catering",
+    "copyright": "© {year} TacoLoco. All rights reserved.",
+    "logoAlt": "TacoLoco Street Food"
+  }
+}
