@@ -39,7 +39,7 @@ export function Footer() {
                 className="h-12 w-auto object-contain brightness-0 invert opacity-95"
               />
             </Link>
-            <p className="mt-4 text-sm text-white/80">{t("tagline")}</p>
+            <p className="mt-4 text-sm text-white">{t("tagline")}</p>
             <Link
               href="/catering"
               className="mt-4 inline-flex rounded-lg bg-white px-4 py-2 text-sm font-semibold text-secondary shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
@@ -52,7 +52,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
               {t("visit")}
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/80">
+            <ul className="mt-4 space-y-2 text-sm text-white">
               <li>{t("address1")}</li>
               <li>{t("address2")}</li>
               <li>{t("address3")}</li>
@@ -71,7 +71,7 @@ export function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-white/80 hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    className="text-sm text-white hover:underline transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
                   >
                     {t(key)}
                     <span className="ml-1 inline-block" aria-hidden>
@@ -91,7 +91,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/70 hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    className="text-white/95 hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
                   >
                     {t(key)}
                   </Link>
@@ -99,7 +99,7 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-white/90">
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
