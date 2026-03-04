@@ -1,14 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-import "./globals.css";
-import { JsonLd } from "@/components/JsonLd";
-
-const inter = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "TacoLoco | Authentic Street Food in Kensington Market, Toronto",
@@ -57,22 +47,10 @@ export const viewport: Viewport = {
   themeColor: "#0e172a",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocale();
-  const messages = await getMessages();
-
-  return (
-    <html lang={locale} className={inter.variable}>
-      <body className="min-h-screen flex flex-col font-sans">
-        <NextIntlClientProvider messages={messages}>
-          <JsonLd />
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+  return children;
 }
