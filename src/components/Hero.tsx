@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -39,7 +40,7 @@ export function Hero() {
           <p className="mt-3 max-w-xl text-sm text-primary/70 md:hidden">
             {t("extraMobile")}
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
             <a
               href="https://www.ubereats.com/ca/store/taco-loco/vX78IiGsUzW3WnND5jpRTg"
               target="_blank"
@@ -48,6 +49,12 @@ export function Hero() {
             >
               {t("orderUber")}
             </a>
+            <Link
+              href="/catering"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-primary bg-white px-6 py-3 text-base font-semibold text-primary transition hover:bg-primary/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            >
+              {t("catering")}
+            </Link>
           </div>
         </div>
       </div>

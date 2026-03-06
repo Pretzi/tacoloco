@@ -20,6 +20,7 @@
     "seeMenu": "See menu",
     "messageUs": "Message us",
     "orderUber": "Order on Uber Eats",
+    "catering": "Catering",
     "logoAlt": "TacoLoco Street Food"
   },
   "home": {
@@ -48,7 +49,7 @@
       "combo": "Combo meals",
       "comboDesc": "3 tacos + rice, beans & a drink. the best value in Kensington"
     },
-    "priceFrom": "From $7"
+    "priceFrom": "From $5"
   },
   "testimonials": {
     "title": "Don't just take our word for it",

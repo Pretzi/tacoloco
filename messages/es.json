@@ -20,6 +20,7 @@
     "seeMenu": "Ver menú",
     "messageUs": "Escríbenos",
     "orderUber": "Pedir en Uber Eats",
+    "catering": "Catering",
     "logoAlt": "TacoLoco Street Food"
   },
   "home": {
@@ -48,7 +49,7 @@
       "combo": "Combos",
       "comboDesc": "3 tacos + arroz, frijoles y bebida. la mejor relación calidad-precio de Kensington"
     },
-    "priceFrom": "Desde $7"
+    "priceFrom": "Desde $5"
   },
   "testimonials": {
     "title": "No solo lo decimos nosotros",

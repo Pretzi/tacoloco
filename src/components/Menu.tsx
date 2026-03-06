@@ -7,17 +7,17 @@ const menuStructure = [
   {
     categoryKey: "tacos",
     items: [
-      { nameKey: "alPastor", descKey: "alPastorDesc", price: "$7.00", image: "/images/menu/al-pastor.png" },
-      { nameKey: "chorizo", descKey: "chorizoDesc", price: "$7.00", image: "/images/menu/chorizo.png" },
-      { nameKey: "birria", descKey: "birriaDesc", price: "$7.00", image: "/images/menu/birria.png" },
+      { nameKey: "alPastor", descKey: "alPastorDesc", price: "$5.00", image: "/images/menu/al-pastor.png" },
+      { nameKey: "chorizo", descKey: "chorizoDesc", price: "$5.00", image: "/images/menu/chorizo.png" },
+      { nameKey: "birria", descKey: "birriaDesc", price: "$6.00", image: "/images/menu/birria.png" },
       { nameKey: "otherFillings", descKey: "otherFillingsDesc", priceKey: "priceFrom", image: "/images/menu/daily-specials.png" },
     ],
   },
   {
     categoryKey: "tortas",
     items: [
-      { nameKey: "tortaLoca", descKey: "tortaLocaDesc", price: "$13", image: "/images/menu/torta-loca.png" },
-      { nameKey: "combo", descKey: "comboDesc", price: "$25 – $28", image: "/images/menu/combo.png" },
+      { nameKey: "tortaLoca", descKey: "tortaLocaDesc", price: "$13.00", image: "/images/menu/torta-loca.png" },
+      { nameKey: "combo", descKey: "comboDesc", price: "$17 – $26", image: "/images/menu/combo.png" },
     ],
   },
 ];

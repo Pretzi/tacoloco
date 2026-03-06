@@ -59,6 +59,17 @@ export default async function ContactPage() {
         </div>
 
         <div className="mt-12 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
+          <Image
+            src="/images/contact-storefront.png"
+            alt="TacoLoco storefront at 160 Baldwin Street, Kensington Market"
+            width={1200}
+            height={800}
+            className="h-auto w-full object-cover"
+            priority={false}
+          />
+        </div>
+
+        <div className="mt-12 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
           <iframe
             src={GOOGLE_MAPS_EMBED}
             width="100%"
