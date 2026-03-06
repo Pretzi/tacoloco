@@ -13,14 +13,13 @@ export default function HomePage() {
       <Menu />
       <section className="overflow-hidden bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <div className="overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
+          <div className="relative mx-auto aspect-[3/4] max-w-md overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
             <Image
               src="/images/restaurant-exterior.png"
               alt="TacoLoco Street Food at 160 Baldwin Street, Kensington Market — outdoor seating and storefront"
-              width={1200}
-              height={800}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 1024px) 100vw, 1152px"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 28rem"
             />
           </div>
         </div>
