@@ -2,20 +2,20 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { CateringForm } from "@/components/CateringForm";
 
-const cateringImages = [
-  { src: "/images/catering/spread.png", alt: "TacoLoco catering spread" },
-  { src: "/images/catering/event.png", alt: "TacoLoco catering at an event" },
-];
-
 export default async function CateringPage() {
   const t = await getTranslations("pages.catering");
+
+  const cateringImages = [
+    { src: "/images/catering/spread.png", altKey: "imageAltSpread" as const },
+    { src: "/images/catering/event.png", altKey: "imageAltEvent" as const },
+  ];
 
   return (
     <div className="bg-white">
       <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
         <Image
           src="/images/catering/hero.png"
-          alt="TacoLoco catering"
+          alt={t("heroAlt")}
           fill
           priority
           className="object-cover"
@@ -49,7 +49,7 @@ export default async function CateringPage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src={cateringImages[0].src}
-              alt={cateringImages[0].alt}
+              alt={t(cateringImages[0].altKey)}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -61,7 +61,7 @@ export default async function CateringPage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg lg:order-first">
             <Image
               src={cateringImages[1].src}
-              alt={cateringImages[1].alt}
+              alt={t(cateringImages[1].altKey)}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

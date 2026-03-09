@@ -27,7 +27,8 @@
     "exploreMore": {
       "title": "Découvrir TacoLoco",
       "intro": "Explorez notre menu complet, réservez un traiteur pour votre prochain événement, découvrez-nous dans la presse ou rejoignez l'équipe."
-    }
+    },
+    "restaurantExteriorAlt": "TacoLoco Street Food au 160 Baldwin Street, Kensington Market — terrasse et façade"
   },
   "menu": {
     "title": "Notre menu",
@@ -117,6 +118,13 @@
     "about": {
       "title": "À propos de TacoLoco",
       "intro": "TacoLoco est né d'une idée simple : apporter les saveurs audacieuses et sans compromis de la street food mexicaine à Toronto. sans raccourcis, sans concessions.",
+      "fromScratchTitle": "De zéro, chaque jour",
+      "realIngredientsTitle": "Vrais ingrédients, vraie saveur",
+      "moreThanFoodTitle": "Plus que de la nourriture",
+      "heroAlt": "Street food TacoLoco",
+      "imageAltKitchen": "Cuisine TacoLoco",
+      "imageAltMarket": "Kensington Market",
+      "imageAltCommunity": "Communauté TacoLoco",
       "p1": "Installés au cœur de Kensington Market, nous avons ouvert au 160 Baldwin Street parce que ce quartier incarne tout ce en quoi nous croyons : indépendant, diversifié et obsédé par la bonne cuisine. Chaque jour, nous allumons le grill et préparons chaque taco, torta et birria de zéro avec des recettes traditionnelles et les ingrédients les plus frais.",
       "p2": "Notre al pastor est rôti lentement à la broche. Notre birria mijote pendant des heures jusqu'à fondre sous la fourchette. Nos salsas sont faites maison chaque jour. Pas de galettes surgelées, pas de micro-ondes, rien d'artificiel. Ce que vous goûtez, c'est de la vraie street food mexicaine. celle qu'on trouve dans les rues de Mexico, Guadalajara ou Oaxaca.",
       "p3": "Mais TacoLoco, c'est plus que de la nourriture. C'est un lieu de communauté. Un endroit où les habitués de Kensington croisent les touristes, où les familles partagent une table avec les étudiants, et où la seule chose qui compte c'est la faim. Noté 4,7 sur Yelp, 4,6 sur Too Good To Go, et recommandé par tous ceux qui nous ont essayés.",
@@ -126,6 +134,9 @@
     "catering": {
       "title": "Traiteur TacoLoco",
       "intro": "Rendez votre prochain événement inoubliable avec la street food mexicaine la plus aimée de Toronto. Le traiteur TacoLoco apporte l'expérience complète de Kensington Market chez vous, frais, savoureux et sans stress.",
+      "heroAlt": "Traiteur TacoLoco",
+      "imageAltSpread": "Buffet traiteur TacoLoco",
+      "imageAltEvent": "Traiteur TacoLoco en événement",
       "section1Title": "Pour tous les groupes",
       "p1": "Qu'il s'agisse d'un déjeuner corporate pour 20, d'une fête d'anniversaire pour 50 ou d'une réception de mariage pour 200, on s'occupe de tout. Notre menu traiteur reprend les mêmes tacos, birria, tortas et accompagnements faits main que nous servons au 160 Baldwin, préparés sur place ou livrés chauds. Nous personnalisons chaque commande selon la taille du groupe, les besoins alimentaires et le budget.",
       "section2Title": "Pourquoi TacoLoco ?",
@@ -162,6 +173,9 @@
     "joinUs": {
       "title": "Travailler chez TacoLoco",
       "intro": "On construit quelque chose de spécial à Kensington Market, et on cherche des personnes qui partagent notre passion pour la bonne cuisine, l'hospitalité sincère et les bonnes ondes.",
+      "heroAlt": "Travailler chez TacoLoco",
+      "imageAltTeam": "Équipe TacoLoco",
+      "imageAltVibe": "Ambiance Kensington Market",
       "section1Title": "Plus qu'un emploi",
       "p1": "Chez TacoLoco, vous ne ferez pas que garnir des tacos. Vous ferez partie d'une équipe soudée qui est fière de chaque assiette, connecte avec des clients du monde entier et travaille dans l'un des quartiers les plus excitants de Toronto. On valorise la fiabilité, l'attitude positive et l'envie d'apprendre. L'expérience en restauration est un plus, mais l'enthousiasme compte plus.",
       "section2Title": "Ce qu'on offre",
@@ -173,6 +187,9 @@
     "contact": {
       "title": "Contacter TacoLoco",
       "intro": "Une question, une grosse commande, ou intéressé par le traiteur ? On serait ravis de vous entendre.",
+      "storefrontAlt": "Façade TacoLoco au 160 Baldwin Street, Kensington Market",
+      "mapTitle": "Emplacement TacoLoco sur Google Maps",
+      "logoAlt": "TacoLoco",
       "addressLabel": "Nous trouver",
       "address": "160 Baldwin Street, Kensington Market, Toronto, ON",
       "hoursLabel": "Horaires",

@@ -27,7 +27,8 @@
     "exploreMore": {
       "title": "Discover TacoLoco",
       "intro": "Explore our full menu, book catering for your next event, read about us in the press, or join the team."
-    }
+    },
+    "restaurantExteriorAlt": "TacoLoco Street Food at 160 Baldwin Street, Kensington Market — outdoor seating and storefront"
   },
   "menu": {
     "title": "Our menu",
@@ -117,6 +118,13 @@
     "about": {
       "title": "About TacoLoco",
       "intro": "TacoLoco started with a simple idea: bring the bold, unapologetic flavours of Mexican street food to Toronto. no shortcuts, no compromises.",
+      "fromScratchTitle": "From scratch, every day",
+      "realIngredientsTitle": "Real ingredients, real flavour",
+      "moreThanFoodTitle": "More than food",
+      "heroAlt": "TacoLoco street food",
+      "imageAltKitchen": "TacoLoco kitchen",
+      "imageAltMarket": "Kensington Market",
+      "imageAltCommunity": "TacoLoco community",
       "p1": "Founded in the heart of Kensington Market, we set up shop at 160 Baldwin Street because this neighbourhood is everything we believe in: independent, diverse, and obsessed with great food. Every day, we fire up the grill and make each taco, torta, and birria from scratch using traditional recipes and the freshest ingredients we can source.",
       "p2": "Our al pastor is spit-roasted low and slow. Our birria is braised for hours until fork-tender. Our salsas are made in-house daily. There are no frozen patties, no microwaves, no artificial anything. What you taste is real Mexican street food. the kind you'd find on the streets of Mexico City, Guadalajara, or Oaxaca.",
       "p3": "But TacoLoco is more than food. We're a community spot. A place where Kensington Market regulars bump into tourists, where families share a table with students, and where the only thing that matters is whether you're hungry. We've been rated 4.7 on Yelp, 4.6 on Too Good To Go, and recommended by everyone who's tried us.",
@@ -126,6 +134,9 @@
     "catering": {
       "title": "TacoLoco Catering",
       "intro": "Make your next event unforgettable with Toronto's most-loved Mexican street food. TacoLoco catering brings the full Kensington Market experience to your venue, fresh, flavourful, and stress-free.",
+      "heroAlt": "TacoLoco catering",
+      "imageAltSpread": "TacoLoco catering spread",
+      "imageAltEvent": "TacoLoco catering at an event",
       "section1Title": "Feed any crowd",
       "p1": "Whether it's a corporate lunch for 20, a birthday bash for 50, or a wedding reception for 200, we've got you covered. Our catering menu features the same handmade tacos, birria, tortas, and sides we serve at 160 Baldwin, prepared on-site or delivered hot and ready to eat. We customize every order to your group size, dietary needs, and budget.",
       "section2Title": "Why TacoLoco?",
@@ -162,6 +173,9 @@
     "joinUs": {
       "title": "Work at TacoLoco",
       "intro": "We're building something special in Kensington Market, and we're looking for people who share our passion for great food, genuine hospitality, and good energy.",
+      "heroAlt": "Work at TacoLoco",
+      "imageAltTeam": "TacoLoco team",
+      "imageAltVibe": "Kensington Market vibes",
       "section1Title": "More than a job",
       "p1": "At TacoLoco, you won't just be filling tacos. You'll be part of a tight-knit team that takes pride in every plate, connects with customers from all over the world, and works in one of Toronto's most exciting neighbourhoods. We value reliability, a positive attitude, and a willingness to learn. Experience in food service is a plus, but enthusiasm matters more.",
       "section2Title": "What we offer",
@@ -173,6 +187,9 @@
     "contact": {
       "title": "Contact TacoLoco",
       "intro": "Have a question, want to place a large order, or interested in catering? We'd love to hear from you.",
+      "storefrontAlt": "TacoLoco storefront at 160 Baldwin Street, Kensington Market",
+      "mapTitle": "TacoLoco location on Google Maps",
+      "logoAlt": "TacoLoco",
       "addressLabel": "Find us",
       "address": "160 Baldwin Street, Kensington Market, Toronto, ON",
       "hoursLabel": "Hours",

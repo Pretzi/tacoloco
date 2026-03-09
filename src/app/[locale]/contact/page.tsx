@@ -61,7 +61,7 @@ export default async function ContactPage() {
         <div className="mt-12 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
           <Image
             src="/images/contact-storefront.png"
-            alt="TacoLoco storefront at 160 Baldwin Street, Kensington Market"
+            alt={t("storefrontAlt")}
             width={1200}
             height={800}
             className="h-auto w-full object-cover"
@@ -78,7 +78,7 @@ export default async function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="TacoLoco location on Google Maps"
+            title={t("mapTitle")}
             className="w-full"
           />
         </div>
@@ -86,13 +86,13 @@ export default async function ContactPage() {
         <div className="mt-8 flex items-center justify-center gap-6">
           <Image
             src="/images/logo.png"
-            alt="TacoLoco"
+            alt={t("logoAlt")}
             width={120}
             height={40}
             className="h-8 w-auto object-contain"
           />
           <p className="text-sm text-primary/60">
-            160 Baldwin Street, Kensington Market, Toronto
+            {t("address")}
           </p>
         </div>
       </div>

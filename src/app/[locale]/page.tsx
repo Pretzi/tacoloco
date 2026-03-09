@@ -4,8 +4,11 @@ import { Menu } from "@/components/Menu";
 import { Testimonials } from "@/components/Testimonials";
 import { ExploreMore } from "@/components/WhoWeAre";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const t = await getTranslations("home");
+
   return (
     <>
       <Hero />
@@ -16,7 +19,7 @@ export default function HomePage() {
           <div className="relative mx-auto aspect-[3/4] max-w-md overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
             <Image
               src="/images/restaurant-exterior.png"
-              alt="TacoLoco Street Food at 160 Baldwin Street, Kensington Market — outdoor seating and storefront"
+              alt={t("restaurantExteriorAlt")}
               fill
               className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 28rem"

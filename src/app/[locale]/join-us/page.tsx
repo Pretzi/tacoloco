@@ -10,7 +10,7 @@ export default async function JoinUsPage() {
       <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
         <Image
           src="/images/join-us/hero.png"
-          alt="Work at TacoLoco"
+          alt={t("heroAlt")}
           fill
           priority
           className="object-cover"
@@ -38,7 +38,7 @@ export default async function JoinUsPage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/join-us/team.png"
-              alt="TacoLoco team"
+              alt={t("imageAltTeam")}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -50,7 +50,7 @@ export default async function JoinUsPage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg lg:order-first">
             <Image
               src="/images/join-us/vibe.png"
-              alt="Kensington Market vibes"
+              alt={t("imageAltVibe")}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

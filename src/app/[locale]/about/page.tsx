@@ -2,21 +2,21 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
-const aboutImages = [
-  { src: "/images/about/kitchen.png", alt: "TacoLoco kitchen" },
-  { src: "/images/about/market.png", alt: "Kensington Market" },
-  { src: "/images/about/community.png", alt: "TacoLoco community" },
-];
-
 export default async function AboutPage() {
   const t = await getTranslations("pages.about");
+
+  const aboutImages = [
+    { src: "/images/about/kitchen.png", altKey: "imageAltKitchen" as const },
+    { src: "/images/about/market.png", altKey: "imageAltMarket" as const },
+    { src: "/images/about/community.png", altKey: "imageAltCommunity" as const },
+  ];
 
   return (
     <div className="bg-white">
       <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
         <Image
           src="/images/about/hero.png"
-          alt="TacoLoco street food"
+          alt={t("heroAlt")}
           fill
           priority
           className="object-cover"
@@ -38,13 +38,13 @@ export default async function AboutPage() {
 
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">From scratch, every day</h2>
+            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("fromScratchTitle")}</h2>
             <p className="mt-4 leading-relaxed text-primary/85">{t("p1")}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src={aboutImages[0].src}
-              alt={aboutImages[0].alt}
+              alt={t(aboutImages[0].altKey)}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -56,27 +56,27 @@ export default async function AboutPage() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg lg:order-first">
             <Image
               src={aboutImages[1].src}
-              alt={aboutImages[1].alt}
+              alt={t(aboutImages[1].altKey)}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">Real ingredients, real flavour</h2>
+            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("realIngredientsTitle")}</h2>
             <p className="mt-4 leading-relaxed text-primary/85">{t("p2")}</p>
           </div>
         </div>
 
         <div className="mt-16 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">More than food</h2>
+            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("moreThanFoodTitle")}</h2>
             <p className="mt-4 leading-relaxed text-primary/85">{t("p3")}</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src={aboutImages[2].src}
-              alt={aboutImages[2].alt}
+              alt={t(aboutImages[2].altKey)}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
