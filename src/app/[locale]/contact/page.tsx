@@ -22,7 +22,7 @@ export default async function ContactPage() {
 
       <div
         className="mx-auto max-w-content px-[var(--page-gutter)]"
-        style={{ paddingTop: "var(--space-3xl)", paddingBottom: "var(--space-3xl)" }}
+        style={{ paddingTop: "var(--space-xl)", paddingBottom: "var(--space-3xl)" }}
       >
         <div className="grid gap-16 lg:grid-cols-[2fr_3fr] lg:gap-12 lg:items-start">
 

@@ -20,7 +20,7 @@ export default function AboutPage() {
   const t = useTranslations("pages.about");
 
   return (
-    <div style={{ backgroundColor: "var(--color-ink)" }}>
+    <div style={{ backgroundColor: "var(--color-paper)" }}>
       <PageFold
         eyebrow="Since 2018 · Kensington Market, Toronto"
         title={t("title")}
@@ -29,7 +29,7 @@ export default function AboutPage() {
 
       {/* History */}
       <motion.section
-        style={{ backgroundColor: "var(--color-ink)", paddingTop: "var(--space-3xl)" }}
+        style={{ backgroundColor: "var(--color-paper)", paddingTop: "var(--space-xl)" }}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
@@ -56,7 +56,7 @@ export default function AboutPage() {
             >
               Est. 2018 · Our story
             </span>
-            <div style={{ flex: 1, height: 1, backgroundColor: "oklch(99% 0 0 / 0.1)" }} />
+            <div style={{ flex: 1, height: 1, backgroundColor: "oklch(8% 0.015 255 / 0.1)" }} />
           </motion.div>
 
           {/* Two-column layout: large year left, text right on desktop */}
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   fontWeight: 400,
                   lineHeight: 0.85,
                   letterSpacing: "-0.03em",
-                  color: "oklch(99% 0 0 / 0.07)",
+                  color: "var(--color-accent)",
                   textTransform: "uppercase",
                   userSelect: "none",
                 }}
@@ -84,13 +84,12 @@ export default function AboutPage() {
             {/* Right: story paragraphs */}
             <div className="flex flex-col" style={{ gap: "var(--space-xl)" }}>
 
-              {/* Lead paragraph — slightly larger, crimson left rule */}
               <motion.p
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--text-base)",
                   lineHeight: 1.72,
-                  color: "oklch(99% 0 0 / 0.85)",
+                  color: "var(--color-ink)",
                   paddingLeft: "var(--space-lg)",
                   borderLeft: "3px solid var(--color-accent)",
                 }}
@@ -99,28 +98,28 @@ export default function AboutPage() {
                 {t("p1")}
               </motion.p>
 
-              <motion.div style={{ height: 1, backgroundColor: "oklch(99% 0 0 / 0.08)" }} variants={fadeUp} />
+              <motion.div style={{ height: 1, backgroundColor: "oklch(8% 0.015 255 / 0.08)" }} variants={fadeUp} />
 
               <motion.p
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--text-base)",
                   lineHeight: 1.75,
-                  color: "oklch(99% 0 0 / 0.65)",
+                  color: "oklch(8% 0.015 255 / 0.6)",
                 }}
                 variants={fadeUp}
               >
                 {t("p2")}
               </motion.p>
 
-              <motion.div style={{ height: 1, backgroundColor: "oklch(99% 0 0 / 0.08)" }} variants={fadeUp} />
+              <motion.div style={{ height: 1, backgroundColor: "oklch(8% 0.015 255 / 0.08)" }} variants={fadeUp} />
 
               <motion.p
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--text-base)",
                   lineHeight: 1.75,
-                  color: "oklch(99% 0 0 / 0.65)",
+                  color: "oklch(8% 0.015 255 / 0.6)",
                 }}
                 variants={fadeUp}
               >
@@ -133,7 +132,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom rule */}
-        <div style={{ height: 3, backgroundColor: "oklch(99% 0 0 / 0.15)", marginTop: "var(--space-3xl)" }} />
+        <div style={{ height: 3, backgroundColor: "oklch(8% 0.015 255 / 0.08)", marginTop: "var(--space-3xl)" }} />
       </motion.section>
 
       <CinematicSection
@@ -165,7 +164,7 @@ export default function AboutPage() {
       {/* Closing CTA */}
       <motion.section
         style={{
-          backgroundColor: "var(--color-ink)",
+          backgroundColor: "var(--color-paper)",
           paddingTop: "var(--space-3xl)",
           paddingBottom: "var(--space-3xl)",
         }}
@@ -179,9 +178,38 @@ export default function AboutPage() {
             <motion.p
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: "var(--text-md)",
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--color-accent)",
+                marginBottom: "var(--space-md)",
+              }}
+              variants={fadeUp}
+            >
+              Since 2018
+            </motion.p>
+            <motion.h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2rem, 4vw + 0.5rem, 4rem)",
+                fontWeight: 400,
+                lineHeight: 0.95,
+                letterSpacing: "-0.01em",
+                textTransform: "uppercase",
+                color: "var(--color-ink)",
+                marginBottom: "var(--space-lg)",
+              }}
+              variants={fadeUp}
+            >
+              {t("ctaButton")}
+            </motion.h2>
+            <motion.p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "var(--text-base)",
                 lineHeight: 1.75,
-                color: "oklch(99% 0 0 / 0.65)",
+                color: "oklch(8% 0.015 255 / 0.6)",
               }}
               variants={fadeUp}
             >
@@ -190,7 +218,7 @@ export default function AboutPage() {
             <motion.div style={{ marginTop: "var(--space-xl)" }} variants={fadeUp}>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+                className="inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--text-sm)",

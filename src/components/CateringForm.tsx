@@ -6,12 +6,12 @@ import { useTranslations } from "next-intl";
 const inputStyle: React.CSSProperties = {
   display: "block",
   width: "100%",
-  backgroundColor: "oklch(99% 0 0 / 0.06)",
-  border: "1px solid oklch(99% 0 0 / 0.15)",
+  backgroundColor: "oklch(8% 0.015 255 / 0.04)",
+  border: "1px solid oklch(8% 0.015 255 / 0.15)",
   padding: "0.75rem 1rem",
   fontFamily: "var(--font-body)",
   fontSize: "var(--text-sm)",
-  color: "oklch(99% 0 0)",
+  color: "var(--color-ink)",
   outline: "none",
   transition: "border-color 150ms ease",
 };
@@ -23,7 +23,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: "0.12em",
   textTransform: "uppercase",
-  color: "oklch(99% 0 0 / 0.5)",
+  color: "oklch(8% 0.015 255 / 0.5)",
   marginBottom: "0.4rem",
 };
 
@@ -39,7 +39,7 @@ export function CateringForm() {
     e.currentTarget.style.borderColor = "var(--color-accent)";
   }
   function handleBlur(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    e.currentTarget.style.borderColor = "oklch(99% 0 0 / 0.15)";
+    e.currentTarget.style.borderColor = "oklch(8% 0.015 255 / 0.15)";
   }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -100,7 +100,7 @@ export function CateringForm() {
         </Field>
         <Field>
           <label htmlFor="date" style={labelStyle}>{t("date")}</label>
-          <input type="date" id="date" name="date" style={{ ...inputStyle, colorScheme: "dark" }} onFocus={handleFocus} onBlur={handleBlur} />
+          <input type="date" id="date" name="date" style={{ ...inputStyle, colorScheme: "light" }} onFocus={handleFocus} onBlur={handleBlur} />
         </Field>
         <div className="sm:col-span-2">
           <Field>
@@ -109,7 +109,7 @@ export function CateringForm() {
               type="text" id="guests" name="guests"
               placeholder={t("guestsPlaceholder")}
               style={{ ...inputStyle, color: undefined }}
-              className="placeholder:text-white/25"
+              className="placeholder:text-ink/30"
               onFocus={handleFocus} onBlur={handleBlur}
             />
           </Field>
@@ -122,7 +122,7 @@ export function CateringForm() {
           id="message" name="message" rows={4} required
           placeholder={t("messagePlaceholder")}
           style={{ ...inputStyle, resize: "vertical", color: undefined } as React.CSSProperties}
-          className="placeholder:text-white/25"
+          className="placeholder:text-ink/30"
           onFocus={handleFocus} onBlur={handleBlur}
         />
       </Field>
