@@ -3,113 +3,171 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const navKeys = [
-  { href: "/about", key: "about" },
+  { href: "/about",    key: "about" },
   { href: "/catering", key: "catering" },
-  { href: "/join-us", key: "joinUs" },
-  { href: "/contact", key: "contact" },
+  { href: "/join-us",  key: "joinUs" },
+  { href: "/contact",  key: "contact" },
 ] as const;
 
 export function Header() {
   const t = useTranslations("nav");
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-secondary-dark bg-secondary backdrop-blur supports-[backdrop-filter]:bg-secondary/95">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header
+      className="sticky top-0 z-[200] w-full"
+      style={{ backgroundColor: "var(--color-ink)", isolation: "isolate" }}
+    >
+      {/* ── Single horizontal bar ── */}
+      <div
+        className="mx-auto flex items-center justify-between px-[var(--page-gutter)]"
+        style={{ maxWidth: "var(--content-max)", height: 60 }}
+      >
+        {/* Logo — left */}
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+          className="shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
           aria-label={t("home")}
         >
           <Image
             src="/images/logo.png"
             alt={t("logoAlt")}
             width={140}
-            height={48}
-            className="h-10 w-auto object-contain brightness-0 invert sm:h-12"
+            height={46}
+            className="h-7 w-auto object-contain brightness-0 invert"
             priority
           />
         </Link>
 
-        <div className="hidden md:flex md:items-center md:gap-6">
-          <nav
-            className="flex items-center gap-8"
-            aria-label="Main navigation"
-          >
-            {navKeys.map(({ href, key }) => (
+        {/* Desktop: nav links + lang — right */}
+        <nav
+          className="hidden md:flex items-center"
+          style={{ gap: "var(--space-xl)" }}
+          aria-label="Primary navigation"
+        >
+          {navKeys.map(({ href, key }) => {
+            const isActive = pathname === href || pathname.startsWith(href + "/");
+            return (
               <Link
                 key={href}
                 href={href}
-                className="text-sm font-medium text-white/90 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded px-1"
+                className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: isActive ? "var(--color-accent)" : "oklch(99% 0 0 / 0.5)",
+                  transition: "color 180ms var(--ease-out)",
+                  paddingBottom: 3,
+                  borderBottom: isActive
+                    ? "2px solid var(--color-accent)"
+                    : "2px solid transparent",
+                }}
+                onMouseEnter={e => {
+                  if (!isActive) (e.currentTarget as HTMLElement).style.color = "oklch(99% 0 0)";
+                }}
+                onMouseLeave={e => {
+                  if (!isActive) (e.currentTarget as HTMLElement).style.color = "oklch(99% 0 0 / 0.5)";
+                }}
               >
                 {t(key)}
               </Link>
-            ))}
-          </nav>
-          <LanguageSwitcher />
-        </div>
+            );
+          })}
 
-        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+        </nav>
+
+        {/* Mobile: lang + hamburger — right */}
+        <div className="flex md:hidden items-center gap-3">
           <LanguageSwitcher />
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white/90 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+            className="flex h-9 w-9 items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={t("toggleMenu")}
+            style={{ color: "oklch(99% 0 0 / 0.65)" }}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = "oklch(99% 0 0)")}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = "oklch(99% 0 0 / 0.65)")}
           >
             <span className="sr-only">{t("toggleMenu")}</span>
             <svg
-              className="h-6 w-6"
+              className="h-[18px] w-[18px]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               aria-hidden
             >
               {open ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M4 7h16M4 12h16M4 17h16" />
               )}
             </svg>
           </button>
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        className={`md:hidden ${open ? "block" : "hidden"}`}
-        role="dialog"
-        aria-label="Mobile menu"
-      >
-        <nav className="border-t border-secondary-dark bg-secondary px-4 py-4 space-y-1">
-          {navKeys.map(({ href, key }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-2 text-base font-medium text-white/90 hover:bg-white/10 hover:text-white"
-            >
-              {t(key)}
-            </Link>
-          ))}
+      {/* ── Crimson accent bar ── */}
+      <div aria-hidden="true" style={{ height: 3, backgroundColor: "var(--color-accent)" }} />
+
+      {/* ── Mobile menu ── */}
+      {open && (
+        <nav
+          id="mobile-menu"
+          aria-label="Mobile navigation"
+          style={{ backgroundColor: "var(--color-ink)" }}
+        >
+          {navKeys.map(({ href, key }, i) => {
+            const isActive = pathname === href || pathname.startsWith(href + "/");
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: isActive ? "var(--color-accent)" : "oklch(99% 0 0 / 0.55)",
+                  padding: `var(--space-md) var(--page-gutter)`,
+                  borderTop: i === 0 ? "1px solid oklch(99% 0 0 / 0.08)" : "1px solid oklch(99% 0 0 / 0.08)",
+                  display: "flex",
+                  transition: "color 150ms var(--ease-out)",
+                }}
+              >
+                <span>{t(key)}</span>
+                {isActive && (
+                  <span
+                    aria-hidden
+                    style={{
+                      display: "inline-block",
+                      width: 5,
+                      height: 5,
+                      backgroundColor: "var(--color-accent)",
+                      flexShrink: 0,
+                    }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+          {/* Bottom spacing */}
+          <div style={{ height: "var(--space-sm)" }} />
         </nav>
-      </div>
+      )}
     </header>
   );
 }

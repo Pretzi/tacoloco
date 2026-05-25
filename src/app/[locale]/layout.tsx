@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Anton, IBM_Plex_Sans } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -7,9 +7,18 @@ import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import "../globals.css";
 
-const inter = Inter({
-  variable: "--font-geist-sans",
+const anton = Anton({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export function generateStaticParams() {
@@ -28,8 +37,11 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={inter.variable}>
-      <body className="min-h-screen flex flex-col font-sans">
+    <html
+      lang={locale}
+      className={`${anton.variable} ${ibmPlexSans.variable}`}
+    >
+      <body className="min-h-screen flex flex-col font-body bg-paper text-ink">
         <NextIntlClientProvider messages={messages}>
           <JsonLd />
           <Header />

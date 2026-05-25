@@ -1,103 +1,220 @@
-import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { motion } from "framer-motion";
+import { PageFold } from "@/components/PageFold";
+import { CinematicSection } from "@/components/CinematicSections";
 
-export default async function AboutPage() {
-  const t = await getTranslations("pages.about");
+const E = [0.16, 1, 0.3, 1] as [number, number, number, number];
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: E } },
+};
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
 
-  const aboutImages = [
-    { src: "/images/about/kitchen.png", altKey: "imageAltKitchen" as const },
-    { src: "/images/about/market.png", altKey: "imageAltMarket" as const },
-    { src: "/images/about/community.png", altKey: "imageAltCommunity" as const },
-  ];
+export default function AboutPage() {
+  const t = useTranslations("pages.about");
 
   return (
-    <div className="bg-white">
-      <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-96">
-        <Image
-          src="/images/about/hero.png"
-          alt={t("heroAlt")}
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <h1 className="text-3xl font-bold tracking-tight text-white drop-shadow-lg sm:text-4xl lg:text-5xl">
-              {t("title")}
-            </h1>
-          </div>
-        </div>
-      </div>
+    <div style={{ backgroundColor: "var(--color-ink)" }}>
+      <PageFold
+        eyebrow="Since 2018 · Kensington Market, Toronto"
+        title={t("title")}
+        subtitle={t("intro")}
+      />
 
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="text-xl font-medium leading-relaxed text-primary sm:text-2xl">
-          {t("intro")}
-        </p>
+      {/* History */}
+      <motion.section
+        style={{ backgroundColor: "var(--color-ink)", paddingTop: "var(--space-3xl)" }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={container}
+      >
+        <div className="mx-auto max-w-content px-[var(--page-gutter)]">
 
-        <div className="mt-12 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("fromScratchTitle")}</h2>
-            <p className="mt-4 leading-relaxed text-primary/85">{t("p1")}</p>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src={aboutImages[0].src}
-              alt={t(aboutImages[0].altKey)}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="mt-16 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg lg:order-first">
-            <Image
-              src={aboutImages[1].src}
-              alt={t(aboutImages[1].altKey)}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("realIngredientsTitle")}</h2>
-            <p className="mt-4 leading-relaxed text-primary/85">{t("p2")}</p>
-          </div>
-        </div>
-
-        <div className="mt-16 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div>
-            <h2 className="text-xl font-bold text-primary sm:text-2xl">{t("moreThanFoodTitle")}</h2>
-            <p className="mt-4 leading-relaxed text-primary/85">{t("p3")}</p>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src={aboutImages[2].src}
-              alt={t(aboutImages[2].altKey)}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="mt-16 rounded-2xl bg-secondary/5 p-8 sm:p-10 lg:p-12">
-          <p className="text-lg leading-relaxed text-primary/90 sm:text-xl">
-            {t("p4")}
-          </p>
-          <p className="mt-6">
-            <Link
-              href="/contact"
-              className="inline-flex rounded-xl bg-secondary px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-secondary-light focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+          {/* Eyebrow + rule */}
+          <motion.div
+            className="flex items-center gap-4"
+            style={{ marginBottom: "var(--space-2xl)" }}
+            variants={fadeUp}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--color-accent)",
+                flexShrink: 0,
+              }}
             >
-              {t("cta")}
-            </Link>
-          </p>
+              Est. 2018 · Our story
+            </span>
+            <div style={{ flex: 1, height: 1, backgroundColor: "oklch(99% 0 0 / 0.1)" }} />
+          </motion.div>
+
+          {/* Two-column layout: large year left, text right on desktop */}
+          <div className="grid md:grid-cols-[1fr_2fr] gap-x-16 gap-y-10">
+
+            {/* Left: display year */}
+            <motion.div variants={fadeUp} className="flex md:items-start">
+              <span
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(3.5rem, 7vw, 6rem)",
+                  fontWeight: 400,
+                  lineHeight: 0.85,
+                  letterSpacing: "-0.03em",
+                  color: "oklch(99% 0 0 / 0.07)",
+                  textTransform: "uppercase",
+                  userSelect: "none",
+                }}
+                aria-hidden="true"
+              >
+                2018
+              </span>
+            </motion.div>
+
+            {/* Right: story paragraphs */}
+            <div className="flex flex-col" style={{ gap: "var(--space-xl)" }}>
+
+              {/* Lead paragraph — slightly larger, crimson left rule */}
+              <motion.p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-base)",
+                  lineHeight: 1.72,
+                  color: "oklch(99% 0 0 / 0.85)",
+                  paddingLeft: "var(--space-lg)",
+                  borderLeft: "3px solid var(--color-accent)",
+                }}
+                variants={fadeUp}
+              >
+                {t("p1")}
+              </motion.p>
+
+              <motion.div style={{ height: 1, backgroundColor: "oklch(99% 0 0 / 0.08)" }} variants={fadeUp} />
+
+              <motion.p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-base)",
+                  lineHeight: 1.75,
+                  color: "oklch(99% 0 0 / 0.65)",
+                }}
+                variants={fadeUp}
+              >
+                {t("p2")}
+              </motion.p>
+
+              <motion.div style={{ height: 1, backgroundColor: "oklch(99% 0 0 / 0.08)" }} variants={fadeUp} />
+
+              <motion.p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-base)",
+                  lineHeight: 1.75,
+                  color: "oklch(99% 0 0 / 0.65)",
+                }}
+                variants={fadeUp}
+              >
+                {t("p3")}
+              </motion.p>
+
+            </div>
+          </div>
+
         </div>
-      </div>
+
+        {/* Bottom rule */}
+        <div style={{ height: 3, backgroundColor: "oklch(99% 0 0 / 0.15)", marginTop: "var(--space-3xl)" }} />
+      </motion.section>
+
+      <CinematicSection
+        image="/images/about/kitchen.png"
+        eyebrow="Our kitchen"
+        title={t("fromScratchTitle")}
+        cta={t("ctaButton")}
+        href="/contact"
+        align="left"
+      />
+      <CinematicSection
+        image="/images/about/market.png"
+        eyebrow="Our ingredients"
+        title={t("realIngredientsTitle")}
+        cta="Order on Uber Eats"
+        href="https://www.ubereats.com/ca/store/taco-loco/vX78IiGsUzW3WnND5jpRTg"
+        external
+        align="right"
+      />
+      <CinematicSection
+        image="/images/about/community.png"
+        eyebrow="Our community"
+        title={t("moreThanFoodTitle")}
+        cta={t("ctaButton")}
+        href="/contact"
+        align="left"
+      />
+
+      {/* Closing CTA */}
+      <motion.section
+        style={{
+          backgroundColor: "var(--color-ink)",
+          paddingTop: "var(--space-3xl)",
+          paddingBottom: "var(--space-3xl)",
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={container}
+      >
+        <div className="mx-auto max-w-content px-[var(--page-gutter)]">
+          <div style={{ maxWidth: "54ch" }}>
+            <motion.p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "var(--text-md)",
+                lineHeight: 1.75,
+                color: "oklch(99% 0 0 / 0.65)",
+              }}
+              variants={fadeUp}
+            >
+              {t("p4")}
+            </motion.p>
+            <motion.div style={{ marginTop: "var(--space-xl)" }} variants={fadeUp}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-sm)",
+                  fontWeight: 700,
+                  letterSpacing: "0.07em",
+                  textTransform: "uppercase",
+                  backgroundColor: "var(--color-accent)",
+                  color: "var(--color-accent-ink)",
+                  padding: "0.875rem 1.5rem",
+                  transition: "background-color 180ms var(--ease-out)",
+                }}
+                onMouseEnter={e =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-accent-h)")
+                }
+                onMouseLeave={e =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--color-accent)")
+                }
+              >
+                {t("ctaButton")}
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 }

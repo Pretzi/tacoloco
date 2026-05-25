@@ -2,11 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design tokens — Sport/Brutal edition ── */
 :root {
-  --primary: #0e172a;
-  --secondary: #cc0000;
-  --secondary-light: #e51d21;
-  --secondary-dark: #a31518;
+  /* Surface */
+  --color-paper:       oklch(99% 0.004 75);
+  --color-paper-2:     oklch(95% 0.006 75);
+  --color-paper-3:     oklch(90% 0.008 75);
+
+  /* Ink (near-black for maximum contrast) */
+  --color-ink:         oklch(8% 0.015 255);
+  --color-ink-2:       oklch(28% 0.03 255);
+  --color-muted:       oklch(52% 0.015 255);
+  --color-rule:        oklch(83% 0.008 255);
+
+  /* Accent (hot crimson — max contrast on both dark and light) */
+  --color-accent:      oklch(55% 0.27 27);
+  --color-accent-h:    oklch(60% 0.26 27);
+  --color-accent-d:    oklch(48% 0.27 27);
+  --color-accent-ink:  oklch(99% 0 0);
+  --color-focus:       oklch(55% 0.27 27);
+
+  /* Typography */
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-body:    "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --text-xs:         0.64rem;
+  --text-sm:         0.8rem;
+  --text-base:       1rem;
+  --text-md:         1.25rem;
+  --text-lg:         1.5625rem;
+  --text-xl:         1.9531rem;
+  --text-2xl:        2.4414rem;
+  --text-3xl:        3.0518rem;
+  --text-4xl:        3.8147rem;
+  --text-display-s:  clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  --text-display:    clamp(3.5rem, 7vw + 1rem, 6.5rem);
+  --text-display-l:  clamp(5rem, 12vw + 1rem, 11rem);
+  --text-hero:       clamp(5.5rem, 14vw + 1rem, 14rem);
+
+  /* Spacing — 4-pt */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  /* Layout */
+  --page-gutter:  clamp(1rem, 4vw, 2rem);
+  --content-max:  72rem;
+  --prose-max:    65ch;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short:   200ms;
+  --dur-base:    320ms;
+
+  /* Z-index scale */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-sticky:   200;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* Legacy compat (used by form components) */
+  --primary: oklch(8% 0.015 255);
+  --secondary: oklch(55% 0.27 27);
+  --secondary-light: oklch(60% 0.26 27);
+  --secondary-dark: oklch(48% 0.27 27);
+}
+
+/* ── Global clip (prevents horizontal scroll from overflowing elements) ── */
+html,
+body {
+  overflow-x: clip;
 }
 
 html {
@@ -14,23 +90,24 @@ html {
 }
 
 body {
-  @apply bg-white text-primary antialiased;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Marquee animation ── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
   .animate-marquee {
-    animation: marquee 40s linear infinite;
+    animation: marquee 28s linear infinite;
   }
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

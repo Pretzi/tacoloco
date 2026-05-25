@@ -20,19 +20,33 @@ export function PromoMarquee() {
   const images = [...promos, ...promos];
 
   return (
-    <section className="overflow-hidden bg-white py-6 sm:py-8">
+    <section
+      className="overflow-hidden bg-paper-2"
+      style={{
+        paddingTop: "var(--space-xl)",
+        paddingBottom: "var(--space-xl)",
+        borderTop: "var(--rule-hair) solid var(--color-rule)",
+        borderBottom: "var(--rule-hair) solid var(--color-rule)",
+      }}
+      aria-hidden="true"
+    >
       <div className="relative">
-        <div className="flex w-max animate-marquee gap-4 sm:gap-6">
+        <div className="flex w-max animate-marquee" style={{ gap: "var(--space-sm)" }}>
           {images.map((file, i) => (
             <div
               key={`${file}-${i}`}
-              className="relative h-64 w-44 shrink-0 overflow-hidden rounded-2xl sm:h-80 sm:w-56 lg:h-96 lg:w-64"
+              className="relative shrink-0 overflow-hidden"
+              style={{
+                width: "clamp(10rem, 18vw, 14rem)",
+                height: "clamp(13rem, 22vw, 18rem)",
+                borderRadius: 0,
+              }}
             >
               <Image
                 src={`/images/promos/${file}`}
                 alt=""
                 fill
-                sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 288px"
+                sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 224px"
                 className="object-cover"
               />
             </div>

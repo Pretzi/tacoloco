@@ -23,7 +23,38 @@
     "catering": "Traiteur",
     "logoAlt": "TacoLoco Street Food"
   },
+  "stats": {
+    "googleValue": "4.9★",
+    "google": "Google · 1 033 avis",
+    "yelpValue": "4.7★",
+    "yelp": "Yelp",
+    "tgtgValue": "1 000+",
+    "tgtg": "avis 5★ Too Good To Go",
+    "openValue": "Quotidien",
+    "openLabel": "12h – 20h30"
+  },
+  "cinematic": {
+    "s1": {
+      "eyebrow": "Frais · Fait chaque jour",
+      "title": "Feu & saveurs maison",
+      "cta": "Commander"
+    },
+    "s2": {
+      "eyebrow": "Traiteur · Événements",
+      "title": "On nourrit toutes les foules",
+      "cta": "Réserver"
+    },
+    "s3": {
+      "eyebrow": "Kensington Market · Toronto",
+      "title": "Venez nous trouver",
+      "cta": "Notre histoire",
+      "directions": "Itinéraire"
+    }
+  },
   "home": {
+    "dishes": {
+      "title": "Nos incontournables"
+    },
     "exploreMore": {
       "title": "Découvrir TacoLoco",
       "intro": "Explorez notre menu complet, réservez un traiteur pour votre prochain événement, découvrez-nous dans la presse ou rejoignez l'équipe."
@@ -129,7 +160,8 @@
       "p2": "Notre al pastor est rôti lentement à la broche. Notre birria mijote pendant des heures jusqu'à fondre sous la fourchette. Nos salsas sont faites maison chaque jour. Pas de galettes surgelées, pas de micro-ondes, rien d'artificiel. Ce que vous goûtez, c'est de la vraie street food mexicaine. celle qu'on trouve dans les rues de Mexico, Guadalajara ou Oaxaca.",
       "p3": "Mais TacoLoco, c'est plus que de la nourriture. C'est un lieu de communauté. Un endroit où les habitués de Kensington croisent les touristes, où les familles partagent une table avec les étudiants, et où la seule chose qui compte c'est la faim. Noté 4,7 sur Yelp, 4,6 sur Too Good To Go, et recommandé par tous ceux qui nous ont essayés.",
       "p4": "Que vous passiez dans le marché, que vous commandiez en livraison sur Uber Eats, ou que vous nous réserviez pour votre prochain événement. nous promettons toujours la même chose : des saveurs authentiques, des portions généreuses et de la cuisine faite avec amour.",
-      "cta": "Contactez-nous. on serait ravis de vous entendre →"
+      "cta": "Contactez-nous. on serait ravis de vous entendre →",
+      "ctaButton": "Nous contacter"
     },
     "catering": {
       "title": "Traiteur TacoLoco",

@@ -3,37 +3,65 @@
 import { useState, FormEvent } from "react";
 import { useTranslations } from "next-intl";
 
+const inputStyle: React.CSSProperties = {
+  display: "block",
+  width: "100%",
+  backgroundColor: "oklch(99% 0 0 / 0.06)",
+  border: "1px solid oklch(99% 0 0 / 0.15)",
+  padding: "0.75rem 1rem",
+  fontFamily: "var(--font-body)",
+  fontSize: "var(--text-sm)",
+  color: "oklch(99% 0 0)",
+  outline: "none",
+  transition: "border-color 150ms ease",
+};
+
+const labelStyle: React.CSSProperties = {
+  display: "block",
+  fontFamily: "var(--font-body)",
+  fontSize: "0.6875rem",
+  fontWeight: 700,
+  letterSpacing: "0.12em",
+  textTransform: "uppercase",
+  color: "oklch(99% 0 0 / 0.5)",
+  marginBottom: "0.4rem",
+};
+
+function Field({ children }: { children: React.ReactNode }) {
+  return <div style={{ display: "flex", flexDirection: "column" }}>{children}</div>;
+}
+
 export function CateringForm() {
   const t = useTranslations("pages.catering.form");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  function handleFocus(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    e.currentTarget.style.borderColor = "var(--color-accent)";
+  }
+  function handleBlur(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    e.currentTarget.style.borderColor = "oklch(99% 0 0 / 0.15)";
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-
     const form = e.currentTarget;
     const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      date: (form.elements.namedItem("date") as HTMLInputElement).value,
-      guests: (form.elements.namedItem("guests") as HTMLInputElement).value,
+      name:    (form.elements.namedItem("name")    as HTMLInputElement).value,
+      email:   (form.elements.namedItem("email")   as HTMLInputElement).value,
+      phone:   (form.elements.namedItem("phone")   as HTMLInputElement).value,
+      date:    (form.elements.namedItem("date")    as HTMLInputElement).value,
+      guests:  (form.elements.namedItem("guests")  as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
-
     try {
       const res = await fetch("/api/catering", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
-      if (res.ok) {
-        setStatus("sent");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
+      if (res.ok) { setStatus("sent"); form.reset(); }
+      else setStatus("error");
     } catch {
       setStatus("error");
     }
@@ -41,99 +69,94 @@ export function CateringForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center sm:p-10">
-        <p className="text-lg font-semibold text-green-800">{t("success")}</p>
+      <div
+        style={{
+          padding: "var(--space-xl)",
+          border: "1px solid oklch(75% 0.15 145 / 0.35)",
+          backgroundColor: "oklch(75% 0.15 145 / 0.08)",
+        }}
+      >
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-base)", color: "oklch(80% 0.12 145)", lineHeight: 1.6 }}>
+          {t("success")}
+        </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-primary">
-            {t("name")} *
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-primary">
-            {t("email")} *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-primary">
-            {t("phone")}
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-          />
-        </div>
-        <div>
-          <label htmlFor="date" className="block text-sm font-medium text-primary">
-            {t("date")}
-          </label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-          />
-        </div>
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "var(--space-md)" }}>
+      <div className="grid sm:grid-cols-2" style={{ gap: "var(--space-md)" }}>
+        <Field>
+          <label htmlFor="name" style={labelStyle}>{t("name")} *</label>
+          <input type="text" id="name" name="name" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+        </Field>
+        <Field>
+          <label htmlFor="email" style={labelStyle}>{t("email")} *</label>
+          <input type="email" id="email" name="email" required style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+        </Field>
+        <Field>
+          <label htmlFor="phone" style={labelStyle}>{t("phone")}</label>
+          <input type="tel" id="phone" name="phone" style={inputStyle} onFocus={handleFocus} onBlur={handleBlur} />
+        </Field>
+        <Field>
+          <label htmlFor="date" style={labelStyle}>{t("date")}</label>
+          <input type="date" id="date" name="date" style={{ ...inputStyle, colorScheme: "dark" }} onFocus={handleFocus} onBlur={handleBlur} />
+        </Field>
         <div className="sm:col-span-2">
-          <label htmlFor="guests" className="block text-sm font-medium text-primary">
-            {t("guests")}
-          </label>
-          <input
-            type="text"
-            id="guests"
-            name="guests"
-            placeholder={t("guestsPlaceholder")}
-            className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm placeholder:text-primary/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-          />
+          <Field>
+            <label htmlFor="guests" style={labelStyle}>{t("guests")}</label>
+            <input
+              type="text" id="guests" name="guests"
+              placeholder={t("guestsPlaceholder")}
+              style={{ ...inputStyle, color: undefined }}
+              className="placeholder:text-white/25"
+              onFocus={handleFocus} onBlur={handleBlur}
+            />
+          </Field>
         </div>
       </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-primary">
-          {t("message")} *
-        </label>
+
+      <Field>
+        <label htmlFor="message" style={labelStyle}>{t("message")} *</label>
         <textarea
-          id="message"
-          name="message"
-          rows={4}
-          required
+          id="message" name="message" rows={4} required
           placeholder={t("messagePlaceholder")}
-          className="mt-1 block w-full rounded-lg border border-primary/20 px-4 py-2.5 text-primary shadow-sm placeholder:text-primary/40 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
+          style={{ ...inputStyle, resize: "vertical", color: undefined } as React.CSSProperties}
+          className="placeholder:text-white/25"
+          onFocus={handleFocus} onBlur={handleBlur}
         />
-      </div>
+      </Field>
 
       {status === "error" && (
-        <p className="text-sm font-medium text-red-600">{t("error")}</p>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-sm)", color: "oklch(65% 0.22 27)" }}>
+          {t("error")}
+        </p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="inline-flex w-full items-center justify-center rounded-xl bg-secondary px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-secondary-light focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:opacity-60 sm:w-auto"
-      >
-        {status === "sending" ? t("sending") : t("submit")}
-      </button>
+      <div>
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "var(--text-sm)",
+            fontWeight: 700,
+            letterSpacing: "0.07em",
+            textTransform: "uppercase",
+            backgroundColor: "var(--color-accent)",
+            color: "var(--color-accent-ink)",
+            padding: "0.875rem 1.75rem",
+            border: "none",
+            cursor: status === "sending" ? "not-allowed" : "pointer",
+            opacity: status === "sending" ? 0.6 : 1,
+            transition: "background-color 180ms var(--ease-out)",
+          }}
+          onMouseEnter={e => { if (status !== "sending") e.currentTarget.style.backgroundColor = "var(--color-accent-h)"; }}
+          onMouseLeave={e => { e.currentTarget.style.backgroundColor = "var(--color-accent)"; }}
+        >
+          {status === "sending" ? t("sending") : t("submit")}
+        </button>
+      </div>
     </form>
   );
 }

@@ -23,7 +23,38 @@
     "catering": "Catering",
     "logoAlt": "TacoLoco Street Food"
   },
+  "stats": {
+    "googleValue": "4.9★",
+    "google": "Google · 1,033 reviews",
+    "yelpValue": "4.7★",
+    "yelp": "Yelp",
+    "tgtgValue": "1,000+",
+    "tgtg": "5★ Too Good To Go reviews",
+    "openValue": "Daily",
+    "openLabel": "12 PM – 8:30 PM"
+  },
+  "cinematic": {
+    "s1": {
+      "eyebrow": "Fresh · Made daily",
+      "title": "Fire & flavour from scratch",
+      "cta": "Order now"
+    },
+    "s2": {
+      "eyebrow": "Catering · Events",
+      "title": "Feed any crowd",
+      "cta": "Book catering"
+    },
+    "s3": {
+      "eyebrow": "Kensington Market · Toronto",
+      "title": "Come find us",
+      "cta": "Our story",
+      "directions": "Get directions"
+    }
+  },
   "home": {
+    "dishes": {
+      "title": "Our favourites"
+    },
     "exploreMore": {
       "title": "Discover TacoLoco",
       "intro": "Explore our full menu, book catering for your next event, read about us in the press, or join the team."
@@ -129,7 +160,8 @@
       "p2": "Our al pastor is spit-roasted low and slow. Our birria is braised for hours until fork-tender. Our salsas are made in-house daily. There are no frozen patties, no microwaves, no artificial anything. What you taste is real Mexican street food. the kind you'd find on the streets of Mexico City, Guadalajara, or Oaxaca.",
       "p3": "But TacoLoco is more than food. We're a community spot. A place where Kensington Market regulars bump into tourists, where families share a table with students, and where the only thing that matters is whether you're hungry. We've been rated 4.7 on Yelp, 4.6 on Too Good To Go, and recommended by everyone who's tried us.",
       "p4": "Whether you're walking through the market, ordering delivery on Uber Eats, or booking us for your next event. we promise the same thing every time: authentic flavour, generous portions, and food made with love.",
-      "cta": "Get in touch. we'd love to hear from you →"
+      "cta": "Get in touch. we'd love to hear from you →",
+      "ctaButton": "Get in touch"
     },
     "catering": {
       "title": "TacoLoco Catering",

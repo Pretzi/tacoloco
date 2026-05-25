@@ -4,105 +4,126 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
-const footerNavKeys = [
-  { href: "/about", key: "about" },
-  { href: "/catering", key: "catering" },
-  { href: "/join-us", key: "joinUs" },
-  { href: "/contact", key: "contact" },
-] as const;
-
-const connectLinks = [
-  { href: "https://www.instagram.com/tacoloco.to/", key: "instagram" },
-  {
-    href: "https://www.ubereats.com/ca/store/taco-loco/vX78IiGsUzW3WnND5jpRTg",
-    key: "ubereats",
-  },
-] as const;
-
+/* Ft1 · Mast-headed
+ * Dark navy background, centred logo + tagline,
+ * minimal link row + address + copyright beneath.
+ */
 export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer id="contact" className="bg-secondary text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link
-              href="/"
-              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
-            >
-              <Image
-                src="/images/logo.png"
-                alt={t("logoAlt")}
-                width={160}
-                height={56}
-                className="h-12 w-auto object-contain brightness-0 invert opacity-95"
-              />
-            </Link>
-            <p className="mt-4 text-sm text-white">{t("tagline")}</p>
-            <Link
-              href="/catering"
-              className="mt-4 inline-flex rounded-lg bg-white px-4 py-2 text-sm font-semibold text-secondary shadow transition hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              {t("orderCatering")}
-            </Link>
-          </div>
+    <footer className="bg-ink text-accent-ink">
+      {/* Solid crimson rule (top) */}
+      <div aria-hidden="true" style={{ height: 4, backgroundColor: "var(--color-accent)" }} />
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
-              {t("visit")}
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white">
-              <li>{t("address1")}</li>
-              <li>{t("address2")}</li>
-              <li>{t("address3")}</li>
-              <li className="pt-2">{t("hours")}</li>
-            </ul>
-          </div>
+      <div className="mx-auto max-w-content px-[var(--page-gutter)] py-12 text-center">
+        {/* Wordmark */}
+        <Link
+          href="/"
+          className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+        >
+          <Image
+            src="/images/logo.png"
+            alt={t("logoAlt")}
+            width={200}
+            height={68}
+            className="h-10 w-auto object-contain brightness-0 invert opacity-90 sm:h-12"
+          />
+        </Link>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90">
-              {t("connect")}
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {connectLinks.map(({ href, key }) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-white hover:underline transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
-                  >
-                    {t(key)}
-                    <span className="ml-1 inline-block" aria-hidden>
-                      ↗
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/* Tagline */}
+        <p
+          className="mt-4 mx-auto max-w-prose text-accent-ink/60"
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "var(--text-sm)",
+            lineHeight: 1.65,
+          }}
+        >
+          {t("tagline")}
+        </p>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <nav aria-label="Footer navigation">
-            <ul className="flex flex-wrap justify-center gap-6 text-sm">
-              {footerNavKeys.map(({ href, key }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-white/95 hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
-                  >
-                    {t(key)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <p className="text-sm text-white/90">
-            {t("copyright", { year: new Date().getFullYear() })}
-          </p>
-        </div>
+        {/* Hairline rule */}
+        <div className="mt-8 border-t border-accent-ink/10" />
+
+        {/* Links row */}
+        <nav className="mt-6" aria-label="Footer navigation">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {[
+              { href: "/about",    key: "about" },
+              { href: "/catering", key: "catering" },
+              { href: "/join-us",  key: "joinUs" },
+              { href: "/contact",  key: "contact" },
+            ].map(({ href, key }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="text-accent-ink/60 hover:text-accent-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "var(--text-xs)",
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    transitionDuration: "var(--dur-short)",
+                    transitionTimingFunction: "var(--ease-out)",
+                  }}
+                >
+                  {t(key)}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a
+                href="https://www.instagram.com/tacoloco.to/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-ink/60 hover:text-accent-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  transitionDuration: "var(--dur-short)",
+                }}
+              >
+                {t("instagram")}
+                <span className="ml-0.5 text-accent-ink/40" aria-hidden>↗</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.ubereats.com/ca/store/taco-loco/vX78IiGsUzW3WnND5jpRTg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-ink/60 hover:text-accent-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "var(--text-xs)",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  transitionDuration: "var(--dur-short)",
+                }}
+              >
+                {t("ubereats")}
+                <span className="ml-0.5 text-accent-ink/40" aria-hidden>↗</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Address + copyright */}
+        <p
+          className="mt-4 text-accent-ink/40"
+          style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-xs)" }}
+        >
+          160 Baldwin Street, Toronto ON&ensp;·&ensp;Open daily 12 PM – 8:30 PM
+        </p>
+        <p
+          className="mt-1 text-accent-ink/30"
+          style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-xs)" }}
+        >
+          {t("copyright", { year: new Date().getFullYear() })}
+        </p>
       </div>
     </footer>
   );

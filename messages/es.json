@@ -23,7 +23,38 @@
     "catering": "Catering",
     "logoAlt": "TacoLoco Street Food"
   },
+  "stats": {
+    "googleValue": "4.9★",
+    "google": "Google · 1.033 reseñas",
+    "yelpValue": "4.7★",
+    "yelp": "Yelp",
+    "tgtgValue": "1.000+",
+    "tgtg": "reseñas 5★ Too Good To Go",
+    "openValue": "Diario",
+    "openLabel": "12:00 – 20:30"
+  },
+  "cinematic": {
+    "s1": {
+      "eyebrow": "Fresco · Hecho cada día",
+      "title": "Fuego y sabor desde cero",
+      "cta": "Pedir ahora"
+    },
+    "s2": {
+      "eyebrow": "Catering · Eventos",
+      "title": "Para cualquier ocasión",
+      "cta": "Contratar catering"
+    },
+    "s3": {
+      "eyebrow": "Kensington Market · Toronto",
+      "title": "Ven a encontrarnos",
+      "cta": "Nuestra historia",
+      "directions": "Cómo llegar"
+    }
+  },
   "home": {
+    "dishes": {
+      "title": "Nuestros favoritos"
+    },
     "exploreMore": {
       "title": "Descubre TacoLoco",
       "intro": "Explora nuestro menú completo, reserva catering para tu próximo evento, lee sobre nosotros en la prensa o únete al equipo."
@@ -129,7 +160,8 @@
       "p2": "Nuestro al pastor se asa lentamente al trompo. Nuestra birria se cocina por horas hasta que se deshace con el tenedor. Nuestras salsas se hacen en casa cada día. No hay hamburguesas congeladas, no hay microondas, nada artificial. Lo que pruebas es comida callejera mexicana real. la que encontrarías en las calles de la Ciudad de México, Guadalajara u Oaxaca.",
       "p3": "Pero TacoLoco es más que comida. Somos un punto de encuentro comunitario. Un lugar donde los habituales de Kensington se cruzan con turistas, donde las familias comparten mesa con estudiantes, y donde lo único que importa es si tienes hambre. Tenemos 4.7 en Yelp, 4.6 en Too Good To Go, y nos recomienda todo el que nos prueba.",
       "p4": "Ya sea que pases por el mercado, pidas delivery en Uber Eats, o nos reserves para tu próximo evento. prometemos siempre lo mismo: sabor auténtico, porciones generosas y comida hecha con amor.",
-      "cta": "Escríbenos. nos encantaría saber de ti →"
+      "cta": "Escríbenos. nos encantaría saber de ti →",
+      "ctaButton": "Contáctanos"
     },
     "catering": {
       "title": "Catering TacoLoco",
